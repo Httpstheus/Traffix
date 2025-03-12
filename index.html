@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+
+<html lang="PT-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Traffix - Marketing Digital</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color   : #1E1E1E;
+    --cl-white   : #fff;
+    --cl-primary : #E02C2C;
+    --cl-hover   : #ac1212;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+section {
+    padding: 0px 8%;
+}
+
+.btn-default {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cl-white);
+    background-color: var(--cl-primary);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 600;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    transition: background-color .3s ease;
+}
+
+.btn-default:hover {
+    background-color: var(--cl-hover);
+}
+
+.social-media-buttons {
+    display: flex;
+    gap: 18px;
+}
+
+.social-media-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 40px;
+    background-color: var(--cl-white);
+    font-size: 1.25rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--cl-primary);
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow .3s ease;
+}
+
+.social-media-buttons a:hover {
+    box-shadow: 0px 0px 12px 8px rgba(0, 0, 0, 0.1);   
+}
+
+.section-title {
+    color: var(--cl-white);
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+.span-title {
+    color: var(--cl-primary);
+}
+
+.section-subtitle {
+    font-size: 2rem;
+    color: var(--cl-white);
+}
+
+logo-whats {
+    z-index: 5;
+}
+
+footer {
+    color: var(--cl-white);
+    text-align: center;
+}
+
+#services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+}
+
+#cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    gap: 18px;
+    width: 25%;
+    padding: 20px;
+    background-color: var(--cl-white);
+    /* box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1); */
+    position: relative;
+    overflow: hidden;
+}
+
+.card-title {
+    color: var(--cl-primary);
+}
+
+.card-heart {
+    position: absolute;
+    background-color: var(--cl-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.563rem;
+    color: var(--cl-white);
+    width: 70px;
+    height: 70px;
+    right: -10px;
+    top: -10px;
+    border-radius: 0px 37.5px 0px 42.5px;
+}
+
+#card-image {
+    color: var(--cl-primary);
+}
+
+.card-description {
+    color: var(--bg-color);
+    text-align: center;
+}
+
+.card-rate i {
+    color: var(--cl-primary);
+}
+
+.card span {
+    color: var(--bg-color);
+}
+
+.card-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: var(--bg-color);
+}
+
+@media screen and (max-width: 1170px) {
+    #cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: calc(50% - 12px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+
+    #services .section-subtitle {
+        text-align: center;
+    }
+} 
+
+#home {
+    display: flex;
+    min-height: calc(100vh - 91px);
+    position: relative;
+}
+
+#cta {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 5%;
+}
+
+#cta .title {
+    font-size: 4rem;
+    color: var(--cl-white);
+}
+
+#cta .title span, #cta .description span {
+    color: var(--cl-primary);
+}
+
+#cta .description {
+    font-size: 1.2rem;
+    color: var(--cl-white);
+}
+
+#cta_buttons {
+    display: flex;
+    gap: 24px;
+}
+
+#cta_buttons a {
+    text-decoration: none;
+    color: var(--bg-color);
+}
+
+#cta_buttons #btnWhts {
+    color: var(--cl-white);
+}
+
+#phone_button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background-color: var(--cl-white);
+    color: var(--bg-color);
+    padding: 8px 14px;
+    font-weight: 500;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+#phone_button button {
+    box-shadow: none
+}
+
+#banner{
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    width: 70%;
+    z-index: 2;
+}
+
+#banner img {
+    height: 100%;
+    width: 90%;
+}
+
+.shape {
+    background-color: var(--cl-primary);
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    border-radius: 40% 30% 0% 20%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+@media screen and (max-width: 1170px) {
+    #home {
+        min-height: 100%;
+        padding-top: 0px;
+    }
+
+    #banner, #banner img, #home .shape {
+        display: none;
+    }
+
+    #cta {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #phone_button button {
+        display: none;
+    }
+}
+
+
+header {
+
+    width: 100%;
+    padding: 28px 8%;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 3;
+}
+
+#navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav_logo {
+    font-size: 18px;
+    color: var(--cl-white);
+}
+
+#nav_list {
+    display: flex;
+    list-style: none;
+    gap: 48px;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--cl-white);
+    font-weight: 600;
+}
+
+.nav-item.active a {
+    color: var(--cl-white);
+    border-bottom: 3px solid #E02C2C;
+}
+
+#mobile_btn {
+    display: none;
+}
+
+#mobile_menu {
+    display: none;
+}
+
+.fa-solid.fa-bars {
+    color: var(--cl-white);
+}
+
+@media screen and (max-width: 1170px) {
+    #nav_list,
+    #navbar .btn-default {
+        display: none;
+    }
+
+    #mobile_btn {
+        display: block;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    #mobile_menu.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mobile_nav_list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin: 12px 0px;
+    }
+
+    #mobile_nav_list .nav-item {
+        list-style: none;
+        text-align: center;
+    } 
+}
+
+#contatos {
+    display: flex;
+    min-height: calc(100vh - 91px);
+    flex-direction: row-reverse;
+    position: relative;
+    min-height: 100vh;
+}
+
+#cta-contatos {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 5%;
+}
+
+#cta-contatos .title-contatos {
+    font-size: 4rem;
+    color: var(--cl-white);
+}
+
+#cta-contatos .title-contatos span, #cta .description span {
+    color: var(--cl-primary);
+}
+
+#cta-contatos .description-contatos {
+    font-size: 1.2rem;
+    color: var(--cl-white);
+}
+
+#cta_buttons {
+    display: flex;
+    gap: 24px;
+}
+
+#cta_buttons a {
+    text-decoration: none;
+    color: var(--bg-color);
+}
+
+#cta_buttons #btnWhts {
+    color: var(--cl-white);
+}
+
+#phone_button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background-color: var(--cl-white);
+    color: var(--bg-color);
+    padding: 8px 14px;
+    font-weight: 500;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+#phone_button button {
+    box-shadow: none;
+}
+
+#banner-contatos{
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    width: 70%;
+    z-index: 2;
+}
+
+#banner-contatos img {
+    height: 100%;
+    width: 90%;
+}
+
+@media screen and (max-width: 1170px) {
+    #home {
+        min-height: 100%;
+        padding-top: 0px;
+    }
+
+    #banner, #banner img, #home .shape {
+        display: none;
+    }
+
+    #cta {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #phone_button button {
+        display: none;
+    }
+}
+
+.btn-default-whats {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cl-white);
+    background-color: #25d366;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-weight: 600;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    transition: background-color .3s ease;
+}
+
+
+@media screen and (max-width: 1170px) {
+    #contatos {
+        min-height: 100%;
+        padding-top: 0px;
+    }
+
+    #banner-contatos, #banner-contatos img {
+        display: none;
+    }
+
+    #cta-contatos {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        margin: 2rem auto;
+    }
+
+@media screen and (max-width: 450px) {
+    #phone_button button {
+        display: none;
+    }
+}
+ 
+}
+
+
+#container {
+    width: 100%;
+    max-width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 0 auto;
+    
+}
+
+.image img {
+    width: 500px;
+    
+}
+
+.content {
+    text-align: left;
+}
+
+.content h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--cl-white);
+}
+
+.content h1 span {
+    color: var(--cl-primary);
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.number {
+    font-size: 4rem;
+    font-weight: bold;
+    color: red;
+    margin-right: 15px;
+}
+
+.text h2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: var(--cl-white);
+}
+
+.text p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.whatsapp img {
+    width: 50px;
+    height: 50px;
+}
+
+@media screen and (max-width: 1170px) {
+    .image {
+        display: none;
+    }
+
+    .content h1{
+        margin-top: 2rem;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+}
+    </style>
+    <body>
+        <header>
+            <nav id="navbar">
+                <i class="fa-brands fa-reddit" id="nav_logo"> Traffix</i>
+
+                <ul id="nav_list">
+                    <li class="nav-item active"><a href="#home">Início</a></li>
+                    <li class="nav-item"><a href="#services">Serviços</a></li>
+                    <li class="nav-item"><a href="#container">Quem Somos</a></li>
+                    <li class="nav-item"><a href="#tesstmonials">Contatos</a></li>
+                </ul>
+           
+                <button class="btn-default">Fale Conosco</button>
+                <button id="mobile_btn"><i class="fa-solid fa-bars"></i></button>
+            </nav>
+                <div id="mobile_menu">
+                    <ul id="mobile_nav_list">
+                        <li class="nav-item"><a href="#home">Início</a></li>
+                        <li class="nav-item"><a href="#menu">Serviços</a></li>
+                        <li class="nav-item"><a href="#container">Quem Somos</a></li>
+                        <li class="nav-item"><a href="#tesstmonials">Contatos</a></li>
+                    </ul> 
+
+                    <button class="btn-default">Fale Conosco</button>
+                </div>
+
+        </header>
+
+        <main id="content">
+            <section id="home">
+                <div class="shape"></div>
+                <div id="cta">
+                    <h1 class="title">
+                    SEU NEGÓCIO <br>
+                        DEU<span> ZEBRA?</span>
+                    </h1>
+                    <p class="description">
+                        Nós temos a solução! Somos uma 
+                        Agência Especializada em <span>Marketing Digital</span>
+                    </p>
+
+                    <div id="cta_buttons">
+                        <a href="#" id="btnWhts" class="btn-default">Fale Conosco</a>
+                        
+                        <a href="tel:+55" id="phone_button"> 
+                            <button class="btn-default">
+                                <i class="fa-solid fa-phone"></i>
+                            </button>
+                            (35) 98433-2490
+                        </a>
+                    </div>
+
+                    <div class="social-media-buttons">
+                        <a href="http://"><i class="fa-brands fa-whatsapp"></i></a>
+
+                        <a href="http://"><i class="fa-brands fa-instagram"></i></a>
+
+                        <a href="http://"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+
+                <div id="banner">
+                    <img src="https://i.postimg.cc/L6XdctKS/zebra-home.png" alt="" srcset="">
+                </div>
+
+            </section>
+
+            <section id="services">
+                <h2 class="section-title">Por quê a <span class="span-title">Traffix?</span></h2>
+                <h3 class="section-subtitle">Saiba como nossas soluções podem te ajudar</h3>
+
+                <div id="cards">
+                    <div class="card">
+                        <div class="card-heart">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+    
+                        <i id="card-image" class="fa-solid fa-hammer fa-4x"></i>
+    
+                        <h3 class="card-title">
+                            Construa seu Marketing
+                        </h3>
+    
+                        <span class="card-description">
+                            Sua aparência digital é muito importante
+                        </span>
+    
+                        <div class="card-rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(500+)</span>
+                        </div>
+    
+                        <div class="card-price">
+                            <h4>Saiba Mais</h4>
+                            <button class="btn-default">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-heart">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+    
+                        <i id="card-image" class="fa-solid fa-ghost fa-4x"></i>
+    
+                        <h3 class="card-title">
+                            Clientes Fantasmas
+                        </h3>
+    
+                        <span class="card-description">
+                            Evite que seus clientes desapareçam
+                        </span>
+    
+                        <div class="card-rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(500+)</span>
+                        </div>
+    
+                        <div class="card-price">
+                            <h4>Saiba Mais</h4>
+                            <button class="btn-default">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-heart">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+    
+                        <i id="card-image" class="fa-solid fa-brush fa-4x"></i>
+    
+                        <h3 class="card-title">
+                            Seu Negócio Personalizado
+                        </h3>
+    
+                        <span class="card-description">
+                            Totalmente personalizado para seu negócio
+                        </span>
+    
+                        <div class="card-rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(500+)</span>
+                        </div>
+    
+                        <div class="card-price">
+                            <h4>Saiba Mais</h4>
+                            <button class="btn-default">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-heart">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+    
+                        <i id="card-image" class="fa-solid fa-network-wired fa-4x"></i>
+    
+                        <h3 class="card-title">
+                            Rede de Contatos
+                        </h3>
+    
+                        <span class="card-description">
+                            Alcance mais leads
+                        </span>
+    
+                        <div class="card-rate">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(500+)</span>
+                        </div>
+    
+                        <div class="card-price">
+                            <h4>Saiba Mais</h4>
+                            <button class="btn-default">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </button>
+                        </div>
+                    </div>
+                   
+                </div>
+            </section>
+
+            <section id="container">
+                <div class="image">
+                    <img src="https://static.vecteezy.com/system/resources/previews/024/865/998/non_2x/zebra-with-ai-generated-free-png.png" alt="" srcset="">
+                </div>
+                <div class="content">
+                    <h1>QUEM <span>SOMOS</span></h1>
+                    <div class="item">
+                        <div class="number">1.</div>
+                        <div class="text">
+                            <h2>Agência de Marketing Digital</h2>
+                            <p>Nosso trabalho é te ajudar a melhorar seu desempenho atráves da internet</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="number">2.</div>
+                        <div class="text">
+                            <h2>Tráfego Pago</h2>
+                            <p>Atinja maior público alvo atráves de anúncios nas redes sociais</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="number">3.</div>
+                        <div class="text">
+                            <h2>Campanha de Vendas</h2>
+                            <p>Faça seu produto chegar nos clientes, aumentando suas vendas </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="number">4.</div>
+                        <div class="text">
+                            <h2>Campanha de Reconhecimento</h2>
+                            <p>Divulgue sua marca, aumente Reconhecimento e Credibilidade na sua região</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        
+            <section id="contatos">
+                <div id="cta-contatos">
+                    <h1 class="title-contatos">
+                    CONTATOS <br>
+                        FALE<span> CONOSCO!</span>
+                    </h1>
+                    <p class="description-contatos">
+                        Não perca tempo! Entre em  
+                        contato <span>para conhecer nossas soluções para seu negócio</span>
+                    </p>
+
+                    <div id="cta_buttons">
+                        <a href="#" id="btnWhts" class="btn-default-whats">WhatsApp</a>
+                        
+                        <a href="tel:+55" id="phone_button"> 
+                            <button class="btn-default">
+                                <i class="fa-solid fa-phone"></i>
+                            </button>
+                            (35) 98433-2490
+                        </a>
+                    </div>
+
+                </div>
+
+                <div id="banner-contatos">
+                    <img src="https://img.pikbest.com/origin/10/10/09/28PpIkbEsTsGZ.png!sw800" alt="" srcset="">
+                </div>
+
+            </section>
+
+                
+                
+            </section>
+
+            <footer>
+                © Traffix, 2025.
+            </footer>
+
+            <a href="https://wa.me/seu-numero" class="whatsapp" target="_blank">
+                <img  class="logo-whats" src="https://static.cdnlogo.com/logos/w/63/whatsapp.png" alt="WhatsApp">
+            </a>
+        </main>
+
+<script src="script.js"></script>
+    </body>
+</html>
