@@ -569,7 +569,7 @@ header {
 }
 
 .number {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: bold;
     color: red;
     margin-right: 15px;
@@ -608,6 +608,97 @@ header {
         justify-content: center;
         align-items: center;
     }
+}
+
+.card-service {
+    width: 100%;
+    min-height: 100vh; 
+    margin: 1rem;
+}
+
+.card-service h2{
+    color: var(--cl-primary);
+    font-size: 4rem;
+    padding: 50px 0;
+    text-align: center;  
+}
+
+.card-service h2 span{
+    color: var(--cl-white);
+    font-size: 4rem;
+    padding: 50px 0;
+    text-align: center;  
+}
+
+.price-row {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 25px;
+    
+}
+
+.price-col {
+    background: var(--bg-color);
+    padding: 10% 15%;
+    border-radius: 10px;
+    color: var(--cl-white);
+    text-align: center;
+    border: 1px solid var(--cl-primary);
+}
+
+.price-col p {
+    font-size: 30px;
+    text-align: center;
+}
+
+.price-col h3 {
+    font-size: 44px;
+    margin: 20px 0 40px;
+    font-weight: 500;
+    color: var(--cl-primary);
+}
+
+.price-col h3 span{
+    font-size: 2rem;
+    margin: 5px 0 40px;
+    font-weight: 600;
+}
+
+.price-col ul {
+    text-align: left;
+    margin: 20px 0;
+    color: var(--cl-white);
+    list-style: none;
+}
+
+.price-col ul li {
+    margin: 15px 0;
+}
+
+.price-col ul li::before {
+    content: '\2022';
+    color: var(--cl-primary);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.btn-service {
+    width: 100%;
+    padding: 14px 0;
+    background: var(--cl-primary);
+    color: var(--cl-white);
+    font-size: 15px;
+    border: 1px solid var(--cl-primary);
+    border-radius: 6px;
+    margin-top: 30px;
+    cursor: pointer;
+
+}
+button .btn-service #hover{
+    background: var(--cl-hover);
 }
     </style>
     <body>
@@ -813,6 +904,53 @@ header {
                 </div>
             </section>
 
+           <section class="card-service">
+                <h2>Escolha <span>seu plano</span></h2>
+                <div class="price-row">
+                    <div class="price-col">
+                     <p>Básico</p>
+                     <h3> <span>Presença Digital</span></h3>
+                     <ul>
+                        <li>8 Posts no feed</li>
+                        <li>4 Artes para Stories</li>
+                        <li>Copy Otimizada</li>                        
+                        <li>Ou tráfego pago: 1 Campanha Ativa </li>
+                        <li>Segmentação Estratégica</li>
+                        <li>Relatório Mensal</li>
+
+                     </ul>
+                     <a href="https://api.whatsapp.com/send?phone=5518981218236&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20B%C3%A1sico!" target="_blank"><button class="btn-service">Saiba Mais</button></a>
+                    </div>
+                    <div class="price-col">
+                        <p>Intermediário</p>
+                        <h3> <span>Crescimento Estratégico</span></h3>
+                        <ul>
+                           <li>12 Posts no Feed</li>
+                           <li>8 Artes para Stories</li>
+                           <li>Planejamento Estratégico</li>
+                           <li>2 campanhas de tráfego em dias estratégicos</li>
+                           <li>Monitoramento Quinzenal</li>
+                           <li>Relatório de Desempenho</li>
+                        </ul>
+                        <a href="https://api.whatsapp.com/send?phone=5518981218236&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20Intermedi%C3%A1rio!%0A%0A" target="_blank"><button class="btn-service">Saiba Mais</button></a>
+                       </div>
+                       <div class="price-col">
+                        <p>Avançado</p>
+                        <h3><span>Domínio Digital</span></h3>
+                        <ul>
+                            <li>16 Posts no Feed</li>
+                            <li>Stories Diários</li>
+                            <li>CopyWriting Avançado</li>
+                            <li>4 Ações de Tráfego Pago</li>
+                            <li>Campanhas no WhatsApp</li>
+                            <li>Monitoramento Semanal e Otimizações Estratégicas</li>
+                        </ul>
+                        <a href="https://api.whatsapp.com/send?phone=5518981218236&text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20pacote%20Avan%C3%A7ado!%0A%0A" target="_blank"><button class="btn-service">Saiba Mais</button></a>
+                       </div>
+                </div>
+           </section>
+
+
             <section id="container">
                 <div class="image">
                     <img src="https://static.vecteezy.com/system/resources/previews/024/865/998/non_2x/zebra-with-ai-generated-free-png.png" alt="" srcset="">
@@ -881,8 +1019,6 @@ header {
             </section>
 
                 
-                
-            </section>
 
             <footer>
                 © Traffix, 2025.
